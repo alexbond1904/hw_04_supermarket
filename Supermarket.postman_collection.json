@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "5198b820-2ef6-4877-b1b6-fc1af46028e1",
+		"name": "Supermarket",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40115088"
+	},
+	"item": [
+		{
+			"name": "Get Size",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/size",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"size"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Product by Bar Code",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"barCode\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products/findByBarCode",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"findByBarCode"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by brand",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"brand\": \"Brand2\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products/findByBrand",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"findByBrand"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products by category",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"category\": \"CategoryA\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products/findByCategory",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"findByCategory"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Products with expired date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/products/findProductsWithExpiredDate",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products",
+						"findProductsWithExpiredDate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"barCode\": 4,\n  \"name\": \"Product4\",\n  \"category\": \"CategoryC\",\n  \"brand\": \"Brand3\",\n  \"price\": 8.99,\n  \"expDate\": \"2024-12-05\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"barCode\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/products",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
